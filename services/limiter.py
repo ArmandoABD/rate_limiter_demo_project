@@ -1,5 +1,20 @@
 from collections import deque
 import time
+import logging
+from enum import Enum
+
+logging.basicConfig(level=logging.INFO)
+
+#enums used to represent a fix set of constants
+#inherits from string
+class Role(str, Enum):
+   ADMIN = "admin"
+   USER = "user" 
+   GUEST = "guest"
+
+class RoleTest(Enum):
+    HIGH = 2
+    LOW = 1
 
 class RateLimiter:
     def __init__(self, limit_per_minute):
@@ -23,3 +38,4 @@ class RateLimiter:
             print("we did it")
             return True
         return False
+        

@@ -12,7 +12,10 @@ app = FastAPI()
 
 
 # Register routes
-app.include_router(router_current, prefix="/api/v1")
+#prefix but let's not do it because it gets too long
+#app.include_router(router_current, prefix="/api/v1")
+
+app.include_router(router_current)
 
 # Register global exception handlers
 app.add_exception_handler(Exception, global_exception_handler)
