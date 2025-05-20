@@ -20,5 +20,6 @@ class RateLimiter:
 
         if len(queue) < self.limit:
             queue.append(current_time)
+            print("we did it")
             return True
         return False
