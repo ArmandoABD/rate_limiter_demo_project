@@ -16,6 +16,8 @@ def handle_enum(role: Role):
     newtest = RoleTest.HIGH
     print(newtest)
     print(newtest.value)
+    print("final check")
+    print(isinstance(newtest, RoleTest))
 
     return JSONResponse(content={"therole": role})
 
